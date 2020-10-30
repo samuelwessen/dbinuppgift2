@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerErrand.Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace CustomerErrand.Views
 
         private void btnShowActiveErrands_Click(object sender, RoutedEventArgs e)
         {
-
+            lvShowErrands.ItemsSource = ErrandService.GetActiveErrands((Application.Current as App).connectionString);
         }
 
         private void btnShowClosedErrands_Click(object sender, RoutedEventArgs e)

@@ -19,6 +19,11 @@ namespace CustomerErrand.Models
             Category = category;
         }
 
+        public Errand()
+        {
+
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]

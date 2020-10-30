@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="auto" Width="auto">
 
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -21,8 +21,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnCreateNewErrand" Click="btnCreateNewErrand_Click" Grid.Column="0" Grid.Row="0" Margin="10" Width="230" Height="130" Content="Create New Errand" FontSize="22" />
-            <Button x:Name="btnGoToErrands" Click="btnGoToErrands_Click" Grid.Column="0" Grid.Row="1" Margin="10" Width="230" Height="130" Content="Go To Errands" FontSize="22" />
+            <Button x:Name="btnCreateNewErrand" Click="btnCreateNewErrand_Click" Grid.Column="0" Grid.Row="0" Margin="10" Width="200" Height="130" Content="Create New Errand" FontSize="20" />
+            <Button x:Name="btnGoToErrands" Click="btnGoToErrands_Click" Grid.Column="0" Grid.Row="1" Margin="10" Width="200" Height="130" Content="Go To Errands" FontSize="20" />
             <Grid Grid.Column="1">
 
             </Grid>
@@ -31,7 +31,7 @@
         <Grid Grid.Column="1">
 
             <ListView>
-                <Frame x:Name="frame" Height="950" Width="1190"/>
+                <Frame x:Name="frame" Height="auto" Width="auto"/>
 
             </ListView>
         </Grid>

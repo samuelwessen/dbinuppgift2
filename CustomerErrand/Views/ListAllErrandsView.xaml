@@ -33,7 +33,7 @@
 
         </Grid>
 
-        <RelativePanel Grid.Row="1">
+        <RelativePanel Grid.Row="1" Width="1200" Margin="10">
             <ListView x:Name="lvShowErrands"
                       SelectionMode="Single"
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -46,43 +46,43 @@
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Id" Margin="5,0" Width="20" />
-                            <TextBlock Text="Created" Margin="5,0" Width="80" />
-                            <TextBlock Text="Status" Margin="5,0" Width="70" />
-                            <TextBlock Text="Category" Margin="5,0" Width="70" />
-                            <TextBlock Text="Description" Margin="5,0" Width="200" />
-                            <TextBlock Text="CustomerName" Margin="5,0" Width="150" />
-                            <TextBlock Text="CustomerEmail" Margin="5,0" Width="150" />
-                            <TextBlock Text="CustomerPhoneNr" Margin="5,0" Width="150" />
+                            <TextBlock Text="Id"  Width="20" Margin="20,10,10,10" />
+                            <TextBlock Text="Created"  Width="150" Margin="10" />
+                            <TextBlock Text="Status"  Width="70" Margin="10" />
+                            <TextBlock Text="Category"  Width="70" Margin="10" />
+                            <TextBlock Text="Description"  Width="100" Margin="10" />
+                            <TextBlock Text="CustomerName"  Width="150" Margin="10" />
+                            <TextBlock Text="CustomerEmail"  Width="150" Margin="10" />
+                            <TextBlock Text="CustomerPhoneNr"  Width="150" Margin="10" />
 
                         </StackPanel>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:Errand">
-                        <StackPanel>
-                            <TextBlock x:Name="Id"
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="Id" Margin="10"
                                        Text="{Binding Id}"
                                        Width="20" />
-                            <TextBlock x:Name="Created"
+                            <TextBlock x:Name="Created" Margin="10"
                                        Text="{Binding CreationTime}"
-                                       Width="80" />
-                            <TextBlock x:Name="Status"
+                                       Width="150" />
+                            <TextBlock x:Name="Status" Margin="10"
                                        Text="{Binding Status}"
                                        Width="70"/>
-                            <TextBlock x:Name="Category"
+                            <TextBlock x:Name="Category" Margin="10"
                                        Text="{Binding Category}"
                                        Width="70"/>
-                            <TextBlock x:Name="Description"
+                            <TextBlock x:Name="Description" Margin="10"
                                        Text="{Binding Description}"
-                                       Width="200"/>
-                            <TextBlock x:Name="CustomerName"
+                                       Width="100"/>
+                            <TextBlock x:Name="CustomerName" Margin="10"
                                        Text="{Binding CustomerFullName}"
                                        Width="150"/>
-                            <TextBlock x:Name="CustomerEmail"
+                            <TextBlock x:Name="CustomerEmail" Margin="10"
                                        Text="{Binding CustomerEmail}"
                                        Width="150"/>
-                            <TextBlock x:Name="CustomerPhoneNr"
+                            <TextBlock x:Name="CustomerPhoneNr" Margin="10"
                                        Text="{Binding CustomerPhoneNr}"
                                        Width="150"/>
                         </StackPanel>

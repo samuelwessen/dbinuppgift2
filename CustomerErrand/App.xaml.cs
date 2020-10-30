@@ -22,6 +22,11 @@ namespace CustomerErrand
     /// </summary>
     sealed partial class App : Application
     {
+        public string connectionString = "Data Source=sqlcustomererrand.database.windows.net;Initial Catalog=customererrand;Persist Security Info=True;User ID=samuel;Password=Hejpådig123";
+        public string ConnectionString { get => connectionString; set => connectionString = value; }
+
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
