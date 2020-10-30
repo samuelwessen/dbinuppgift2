@@ -26,5 +26,15 @@ namespace CustomerErrand.Views
         {
             this.InitializeComponent();
         }
+
+        private void btnShowActiveErrands_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnShowClosedErrands_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -3,12 +3,94 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CustomerErrand.Views"
+    xmlns:models="using:CustomerErrand.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="600" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Show all Active Errands" Margin="5"/>
+                <Button x:Name="btnShowActiveErrands" Click="btnShowActiveErrands_Click" Content="Show Active Errands" Width="230" Height="60" FontSize="22"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="Show all Closed Errands"/>
+                <Button x:Name="btnShowClosedErrands" Click="btnShowClosedErrands_Click" Content="Show Closed Errands" Width="230" Height="60" FontSize="22"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <RelativePanel Grid.Row="1">
+            <ListView x:Name="lvShowErrands"
+                      SelectionMode="Single"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.IsVerticalRailEnabled="True"
+                      ScrollViewer.VerticalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.IsHorizontalRailEnabled="True"
+                      Margin="15">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Id" Margin="5,0" Width="20" />
+                            <TextBlock Text="Created" Margin="5,0" Width="80" />
+                            <TextBlock Text="Status" Margin="5,0" Width="70" />
+                            <TextBlock Text="Category" Margin="5,0" Width="70" />
+                            <TextBlock Text="Description" Margin="5,0" Width="200" />
+                            <TextBlock Text="CustomerName" Margin="5,0" Width="150" />
+                            <TextBlock Text="CustomerEmail" Margin="5,0" Width="150" />
+                            <TextBlock Text="CustomerPhoneNr" Margin="5,0" Width="150" />
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Errand">
+                        <StackPanel>
+                            <TextBlock x:Name="Id"
+                                       Text="{Binding Id}"
+                                       Width="20" />
+                            <TextBlock x:Name="Created"
+                                       Text="{Binding CreationTime}"
+                                       Width="80" />
+                            <TextBlock x:Name="Status"
+                                       Text="{Binding Status}"
+                                       Width="70"/>
+                            <TextBlock x:Name="Category"
+                                       Text="{Binding Category}"
+                                       Width="70"/>
+                            <TextBlock x:Name="Description"
+                                       Text="{Binding Description}"
+                                       Width="200"/>
+                            <TextBlock x:Name="CustomerName"
+                                       Text="{Binding CustomerFullName}"
+                                       Width="150"/>
+                            <TextBlock x:Name="CustomerEmail"
+                                       Text="{Binding CustomerEmail}"
+                                       Width="150"/>
+                            <TextBlock x:Name="CustomerPhoneNr"
+                                       Text="{Binding CustomerPhoneNr}"
+                                       Width="150"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </RelativePanel>
 
     </Grid>
 </Page>
