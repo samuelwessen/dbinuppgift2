@@ -23,11 +23,11 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0">
                 <TextBlock Text="Show all Active Errands" Margin="5"/>
-                <Button x:Name="btnShowActiveErrands" Click="btnShowActiveErrands_Click" Content="Show Active Errands" Width="230" Height="60" FontSize="22"/>
+                <Button x:Name="btnShowActiveErrands" Click="btnShowActiveErrands_Click" Content="Active Errands" Width="230" Height="60" FontSize="22"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1">
                 <TextBlock Text="Show all Closed Errands"/>
-                <Button x:Name="btnShowClosedErrands" Click="btnShowClosedErrands_Click" Content="Show Closed Errands" Width="230" Height="60" FontSize="22"/>
+                <Button x:Name="btnShowClosedErrands" Click="btnShowClosedErrands_Click" Content="Completed Errands" Width="230" Height="60" FontSize="22"/>
 
             </StackPanel>
 

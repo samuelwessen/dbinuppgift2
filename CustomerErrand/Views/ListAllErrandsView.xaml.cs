@@ -35,7 +35,7 @@ namespace CustomerErrand.Views
 
         private void btnShowClosedErrands_Click(object sender, RoutedEventArgs e)
         {
-
+            lvShowErrands.ItemsSource = ErrandService.GetCompletedErrands((Application.Current as App).connectionString);
         }
     }
 }
