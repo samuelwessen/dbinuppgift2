@@ -8,7 +8,34 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btnCreateNewErrand" Click="btnCreateNewErrand_Click" Grid.Column="0" Grid.Row="0" Margin="10" Width="230" Height="130" Content="Create New Errand" FontSize="22" />
+            <Button x:Name="btnGoToErrands" Click="btnGoToErrands_Click" Grid.Column="0" Grid.Row="1" Margin="10" Width="230" Height="130" Content="Go To Errands" FontSize="22" />
+            <Grid Grid.Column="1">
+
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <ListView>
+                <Frame x:Name="frame" Height="950" Width="1190"/>
+
+            </ListView>
+        </Grid>
+
 
     </Grid>
 </Page>
