@@ -8,6 +8,17 @@ namespace CustomerErrand.Models
 {
     public partial class Errand
     {
+        public Errand(string description, DateTime creationTime, string customerFullName, string customerEmail, int? customerPhoneNr, string status, string category)
+        {
+            Description = description;
+            CreationTime = creationTime;
+            CustomerFullName = customerFullName;
+            CustomerEmail = customerEmail;
+            CustomerPhoneNr = customerPhoneNr;
+            Status = status;
+            Category = category;
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]

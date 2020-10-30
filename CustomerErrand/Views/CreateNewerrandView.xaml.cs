@@ -26,5 +26,26 @@ namespace CustomerErrand.Views
         {
             this.InitializeComponent();
         }
+
+        public string GetStatus()
+        {
+            string statusText = cmbStatus.SelectionBoxItem.ToString();
+            return statusText;
+        }
+
+        public string GetCategory()
+        {
+            string categoryText = cmbCategory.SelectionBoxItem.ToString();
+            return categoryText;
+        }
+
+        private void btnCreateErrand_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Service.ErrandService.AddNewErrandAsync(tbDescription.Text, DateTime.Now, tbCustomerFullName.Text, tbCustomerEmail.Text, Convert.ToInt32(tbCustomerPhoneNr.Text), GetStatus(), GetCategory()).GetAwaiter(); 
+            }
+            catch { }
+        }
     }
 }
