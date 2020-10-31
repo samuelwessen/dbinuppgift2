@@ -109,5 +109,22 @@ namespace CustomerErrand.Service
             return null;
 
         }
+
+        public static async Task UpdateErrandAsync(int id, string status)
+        {
+            using DataContext context = new DataContext();
+
+            var Errand = await context.Errand.FindAsync(id);
+
+            if(Errand != null)
+            {
+                Errand.Status = status;
+                context.Entry(Errand).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+            }
+
+
+
+        }
     }
 }

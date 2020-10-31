@@ -28,6 +28,12 @@ namespace CustomerErrand.Views
             this.InitializeComponent();
         }
 
+        public string UpdateStatus()
+        {
+            string statusText = cmbUpdateStatus.SelectionBoxItem.ToString();
+            return statusText;
+        }
+
         private void btnShowActiveErrands_Click(object sender, RoutedEventArgs e)
         {
             lvShowErrands.ItemsSource = ErrandService.GetActiveErrands((Application.Current as App).connectionString);
@@ -36,6 +42,15 @@ namespace CustomerErrand.Views
         private void btnShowClosedErrands_Click(object sender, RoutedEventArgs e)
         {
             lvShowErrands.ItemsSource = ErrandService.GetCompletedErrands((Application.Current as App).connectionString);
+        }
+
+        private void btnUpdateErrandStatus_Click(object sender, RoutedEventArgs e)
+        {
+            //try
+            //{
+            //    ErrandService.UpdateErrandAsync(id, UpdateStatus()).GetAwaiter();
+                
+            //}
         }
     }
 }
