@@ -111,7 +111,7 @@ namespace CustomerErrand.Service
         }
 
         public static async Task UpdateErrandAsync(int id, string status)
-        {
+        {            
             using DataContext context = new DataContext();
 
             var Errand = await context.Errand.FindAsync(id);
@@ -126,5 +126,7 @@ namespace CustomerErrand.Service
 
 
         }
+
+
     }
 }

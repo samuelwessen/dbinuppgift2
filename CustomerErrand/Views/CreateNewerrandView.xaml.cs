@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,13 +40,18 @@ namespace CustomerErrand.Views
             return categoryText;
         }
 
-        private void btnCreateErrand_Click(object sender, RoutedEventArgs e)
+        private async void btnCreateErrand_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 Service.ErrandService.AddNewErrandAsync(tbDescription.Text, DateTime.Now, tbCustomerFullName.Text, tbCustomerEmail.Text, Convert.ToInt32(tbCustomerPhoneNr.Text), GetStatus(), GetCategory()).GetAwaiter(); 
             }
-            catch { }
+            catch
+            {
+                string message = "You must fill in all the required information like name, status and so on";
+                MessageDialog msgdialog = new MessageDialog(message, "Error Message");
+                await msgdialog.ShowAsync();
+            }
         }
     }
 }

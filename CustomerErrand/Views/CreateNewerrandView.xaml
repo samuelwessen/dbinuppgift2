@@ -40,9 +40,7 @@
                     <ComboBoxItem Content="Software"/>
                 </ComboBox>
                 <ComboBox x:Name="cmbStatus" TabIndex="4" Grid.Row="1" Grid.Column="1" Margin="10" Padding="15" Width="200" PlaceholderForeground="LightGray" PlaceholderText="Choose Status...">
-                    <ComboBoxItem Content="Pending"/>
-                    <ComboBoxItem Content="Active"/>
-                    <ComboBoxItem Content="Completed"/>
+                    <ComboBoxItem Content="New"/>                    
                 </ComboBox>
                 <TextBox x:Name="tbDescription" TabIndex="5" Grid.Row="2" Grid.Column="2" Margin="10" Padding="15" PlaceholderForeground="LightGray" PlaceholderText="Describe The Errand..."/>
 

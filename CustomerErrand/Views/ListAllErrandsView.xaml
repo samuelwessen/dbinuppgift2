@@ -12,7 +12,7 @@
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
-            <RowDefinition Height="600" />
+            <RowDefinition Height="450" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -34,14 +34,15 @@
         </Grid>
 
         <RelativePanel Grid.Row="1" Width="1200" Margin="10">
-            <ListView x:Name="lvShowErrands"
-                      SelectionMode="Single"
+            <ListView x:Name="lvShowErrands" IsItemClickEnabled="True" ItemClick="lvShowErrands_ItemClick"  
+                      
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
                       ScrollViewer.IsVerticalRailEnabled="True"
                       ScrollViewer.VerticalScrollMode="Enabled"
                       ScrollViewer.HorizontalScrollMode="Enabled"
                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
                       ScrollViewer.IsHorizontalRailEnabled="True"
+                      SelectedIndex="0"
                       Margin="15">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
@@ -93,16 +94,32 @@
 
         </RelativePanel>
 
-        <StackPanel Grid.Row="2" Margin="20">
-            <TextBlock Text="Change status for the selected errand" Margin="10"/>
-            <ComboBox x:Name="cmbUpdateStatus" Margin="10" Width="200" Padding="15" PlaceholderForeground="LightGray" PlaceholderText="Choose Status...">
-                <ComboBoxItem Content="Pending"/>
-                <ComboBoxItem Content="Active"/>
-                <ComboBoxItem Content="Completed"/>
-            </ComboBox>
-            <Button x:Name="btnUpdateErrandStatus" Margin="10" Content="Update Errand" Click="btnUpdateErrandStatus_Click" />
+        <StackPanel Grid.Row="2" Margin="10" Orientation="Horizontal" Width="auto">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Id" Width="50" Margin="10" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbidLoad" Width="70" Margin="10" PlaceholderText="Id" HorizontalAlignment="Left" />
+                <TextBlock Text="CustomerName" Width="150" Margin="10" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbcustomerNameLoad" Width="170" Margin="10" PlaceholderText="CustomerName" HorizontalAlignment="Left"/>
+                <TextBlock Text="CustomerEmail" Width="150" Margin="10" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbcustomerEmailLoad" Width="170" Margin="10" PlaceholderText="CustomerEmail" HorizontalAlignment="Left"/>
+                <TextBlock Text="CustomerPhoneNr" Width="150" Margin="10" HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbcustomerPhoneNrLoad" Width="170" Margin="10" PlaceholderText="CustomerPhoneNr" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" Margin="0,0,0,0">
+                <TextBlock Text="Change status for the selected errand" Margin="10"/>
+                <ComboBox x:Name="cmbUpdateStatus" Margin="10" Width="200" Padding="10" PlaceholderForeground="LightGray" PlaceholderText="Choose Status...">
+                    <ComboBoxItem Content="Active"/>
+                    <ComboBoxItem Content="Completed"/>
+                </ComboBox>
+                <TextBlock Text="Description"  Margin="10"/>
+                <TextBox x:Name="tbdescriptionLoad" PlaceholderText="Description" Width="300" Height="auto" Margin="10" TextWrapping="Wrap"/>
+                <Button x:Name="btnUpdateErrandStatus" Margin="10" Content="Update Errand" Click="btnUpdateErrandStatus_Click" />
 
+            </StackPanel>
         </StackPanel>
+
+        
 
 
 
