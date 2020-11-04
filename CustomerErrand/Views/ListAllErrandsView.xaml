@@ -13,7 +13,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="450" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="307*" />
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -33,7 +35,7 @@
 
         </Grid>
 
-        <RelativePanel Grid.Row="1" Width="1200" Margin="10">
+        <RelativePanel Grid.Row="1" Width="1200" Margin="130,10,130,10">
             <ListView x:Name="lvShowErrands" IsItemClickEnabled="True" ItemClick="lvShowErrands_ItemClick"  
                       
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -94,7 +96,7 @@
 
         </RelativePanel>
 
-        <StackPanel Grid.Row="2" Margin="10" Orientation="Horizontal" Width="auto">
+        <StackPanel Grid.Row="2" Margin="10,10,10,8" Orientation="Horizontal" Width="auto" Grid.RowSpan="2">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Id" Width="50" Margin="10" HorizontalAlignment="Left"/>
                 <TextBox x:Name="tbidLoad" Width="70" Margin="10" PlaceholderText="Id" HorizontalAlignment="Left" />
@@ -105,12 +107,11 @@
                 <TextBlock Text="CustomerPhoneNr" Width="150" Margin="10" HorizontalAlignment="Left"/>
                 <TextBox x:Name="tbcustomerPhoneNrLoad" Width="170" Margin="10" PlaceholderText="CustomerPhoneNr" HorizontalAlignment="Left"/>
             </StackPanel>
-            
+
             <StackPanel Grid.Row="2" Margin="0,0,0,0">
                 <TextBlock Text="Change status for the selected errand" Margin="10"/>
-                <ComboBox x:Name="cmbUpdateStatus" Margin="10" Width="200" Padding="10" PlaceholderForeground="LightGray" PlaceholderText="Choose Status...">
-                    <ComboBoxItem Content="Active"/>
-                    <ComboBoxItem Content="Completed"/>
+                <ComboBox x:Name="cmbUpdateStatus" Margin="10" Width="200"  PlaceholderForeground="LightGray" PlaceholderText="Choose Status...">
+                    
                 </ComboBox>
                 <TextBlock Text="Description"  Margin="10"/>
                 <TextBox x:Name="tbdescriptionLoad" PlaceholderText="Description" Width="300" Height="auto" Margin="10" TextWrapping="Wrap"/>
@@ -119,7 +120,7 @@
             </StackPanel>
         </StackPanel>
 
-        
+
 
 
 

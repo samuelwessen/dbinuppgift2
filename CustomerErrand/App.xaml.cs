@@ -35,6 +35,12 @@ namespace CustomerErrand
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            
+            CustomerErrand.Models.SettingsContext.CreateSettingsFileAsync().GetAwaiter();
+            CustomerErrand.Models.SettingsContext.WriteToSettingsFileAsync().GetAwaiter();
+            CustomerErrand.Models.SettingsContext.ReadSettingsFileAsync().GetAwaiter();
+
+           
         }
 
         /// <summary>

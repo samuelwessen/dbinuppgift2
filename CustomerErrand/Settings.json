@@ -1,0 +1,4 @@
+﻿{
+  "status": [ "new", "active", "completed" ],
+  "maxItemsCount": 4
+}

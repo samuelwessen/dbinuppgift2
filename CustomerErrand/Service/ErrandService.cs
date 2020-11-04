@@ -122,11 +122,6 @@ namespace CustomerErrand.Service
                 context.Entry(Errand).State = EntityState.Modified;
                 await context.SaveChangesAsync();
             }
-
-
-
         }
-
-
     }
 }

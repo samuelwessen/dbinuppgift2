@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace CustomerErrand.Views
         public ListAllErrandsView()
         {
             this.InitializeComponent();
+            LoadStatusAsync().GetAwaiter();
         }
 
         public string UpdateStatus()
@@ -37,21 +39,27 @@ namespace CustomerErrand.Views
             return statusText;
         }
 
-        //nytt
-        //public int GetSelectedId()
-        //{          
-        //    int idText = Convert.ToInt32(lvShowErrands.SelectedItems[0]);
-        //    return idText;
-        //}
-
-    private void btnShowActiveErrands_Click(object sender, RoutedEventArgs e)
+        private async Task LoadStatusAsync()
         {
-            lvShowErrands.ItemsSource = ErrandService.GetActiveErrands((Application.Current as App).connectionString);
+            cmbUpdateStatus.ItemsSource = await SettingsContext.NewGetStatus();
+        }
+
+
+
+        private void btnShowActiveErrands_Click(object sender, RoutedEventArgs e)
+        {
+            lvShowErrands.ItemsSource = ErrandService.GetActiveErrands((Application.Current as App).connectionString)
+                .OrderByDescending(i => i.CreationTime)
+                .Take(SettingsContext.GetMaxItemsCount())
+                .ToList();
         }
 
         private void btnShowClosedErrands_Click(object sender, RoutedEventArgs e)
         {
-            lvShowErrands.ItemsSource = ErrandService.GetCompletedErrands((Application.Current as App).connectionString);
+            lvShowErrands.ItemsSource = ErrandService.GetCompletedErrands((Application.Current as App).connectionString)
+                .OrderByDescending(i => i.CreationTime)
+                .Take(SettingsContext.GetMaxItemsCount())
+                .ToList();
         }
 
         private async void btnUpdateErrandStatus_Click(object sender, RoutedEventArgs e)
