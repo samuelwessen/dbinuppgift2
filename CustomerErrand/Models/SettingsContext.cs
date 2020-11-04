@@ -50,7 +50,7 @@ namespace CustomerErrand.Models
         {
             StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             StorageFile file = await storageFolder.GetFileAsync("Settings.json");
-            await FileIO.WriteTextAsync(file, "{\"status\": [\"new\", \"active\", \"completed\"], \"maxItemsCount\": 4}");
+            await FileIO.WriteTextAsync(file, "{\"status\": [\"new\", \"active\", \"completed\"], \"maxItemsCount\": 5}");
         }
         public static async Task ReadSettingsFileAsync()
         {
@@ -62,6 +62,8 @@ namespace CustomerErrand.Models
 
         }
 
+
+        //denna fungerar också
         public static async void JsonSetting()
         {
             StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
